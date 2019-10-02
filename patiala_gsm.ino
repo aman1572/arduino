@@ -47,10 +47,10 @@ void sendMessage(String msg)
   mehar.println("AT + CMGS=\"+919914297270\"");
   delay(300);
   mehar.println(msg);
-  delay(3000);
+  delay(4000);
   mehar.println((char)26);
-  delay(3000);
-  Serial.println("Exit send sms");
+  delay(4000);
+  Serial.println("Send Sms Exit");
 }
 
 void deleteMessage()
@@ -89,16 +89,6 @@ void status_display(int m)
   delay(100);  
   lcd.print("  AC2:");if(flag1==0){lcd.print("OFF");} if(flag1==1){lcd.print("ON");}
   delay(100);
-}
-
-void rcv_msg()
-{
-  lcd.clear();
-  lcd.setCursor(5,0);
-  lcd.print("Message");
-  lcd.setCursor(5,1);
-  lcd.print("Received");
-  delay(1500);
 }
 
 void setup()
@@ -172,7 +162,7 @@ void printDigits(int digits){
 void loop()
 {
   //digitalClockDisplay();delay(2000);
-  /*
+  
   delay(1);
   count++;
   if(count>=3100){count=0;}
@@ -190,14 +180,14 @@ void loop()
   if (RTC.read(tm)) {h=tm.Minute;}//{h=tm.Hour;}//
   Serial.println(h);
   delay(2000);
-  /*if (toggle == 4) {if ((h >= 0 && h <= 3) || (h >= 8 && h <= 11) || (h >= 16 && h <= 19)) { st = 1;} else { st = 0; }}
+  if (toggle == 4) {if ((h >= 0 && h <= 3) || (h >= 8 && h <= 11) || (h >= 16 && h <= 19)) { st = 1;} else { st = 0; }}
   if (toggle == 6) {if ((h >= 0 && h <= 5) || (h >= 12 && h <= 17)) { st = 1;} else { st = 0; }}
   if (toggle == 8) {if ((h >= 0 && h <= 7) || (h >= 16 && h <= 23)) { st = 1;} else { st = 0; }}
   if (toggle == 1) {if (h >= 0 && h <= 11) { st = 1;} else { st = 0; }}
   if(st == 1) {digitalWrite(equip[0],HIGH); delay(100); digitalWrite(equip[1],LOW);}
   if(st == 0) {digitalWrite(equip[0],LOW); delay(100); digitalWrite(equip[1],HIGH);}
   }
-*/
+
 
   if(mode==1)
   {
